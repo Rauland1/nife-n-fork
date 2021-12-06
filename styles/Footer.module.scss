@@ -1,0 +1,40 @@
+.footer {
+  height: var(--footerHeight);
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.45rem;
+  transition: var(--transition);
+}
+
+.footerCentre {
+  width: 100%;
+  max-width: var(--max-width);
+
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  margin: 0 0.5rem;
+}
+
+/* 768 and up */
+@media screen and (min-width: 768px) {
+  /* Nothing as of now */
+}

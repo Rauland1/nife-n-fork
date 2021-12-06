@@ -1,0 +1,163 @@
+.prev,
+.next {
+  position: absolute;
+  z-index: 2;
+  top: 35%;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+
+  & > svg {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.prev:hover,
+.next:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.next {
+  right: -20px;
+}
+
+.prev {
+  left: -20px;
+}
+
+.prev::before,
+.next::before {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: black;
+}
+
+.disabled {
+  display: none;
+}
+
+.suggestions {
+  background: var(--backgroundColor);
+  margin: 3.5rem 0;
+}
+
+.suggestionTitle {
+  font-size: 1.65rem;
+  font-weight: 600;
+  padding: 0 1.45rem;
+}
+
+.suggestionSubtitle {
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  padding: 0 1.45rem;
+}
+
+.suggestion {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: start;
+  min-width: 175px;
+  max-width: 175px;
+  cursor: pointer;
+
+  .restaurantData {
+    margin-top: 0.25rem;
+  }
+
+  .restaurantName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: underline rgba(0, 0, 0, 0);
+    transition: var(--transition);
+  }
+
+  img {
+    transition: var(--transition);
+  }
+
+  &:hover {
+    .restaurantName {
+      text-decoration-color: rgba(0, 0, 0, 1);
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+
+  &:first-child {
+    margin-left: 1rem;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 7px;
+  }
+
+  .count {
+    font-weight: 200;
+    font-size: 0.85rem;
+  }
+}
+
+/* 768 and up */
+@media screen and (min-width: 768px) {
+  .suggestions {
+    padding: 0 1.45rem;
+  }
+
+  // .suggestionList {
+  //   overflow: hidden;
+  //   gap: 15px;
+  // }
+
+  .suggestionTitle {
+    padding: 0;
+  }
+
+  .suggestionSubtitle {
+    padding: 0;
+  }
+
+  .suggestion {
+    margin-right: 0;
+    min-width: 250px;
+    max-width: 250px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .suggestions {
+    padding: 0;
+  }
+
+  .suggestion {
+    min-width: 290px;
+    max-width: 290px;
+  }
+}

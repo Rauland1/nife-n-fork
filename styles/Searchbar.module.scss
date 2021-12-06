@@ -1,0 +1,140 @@
+.searchWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--white);
+  z-index: 99;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding);
+  margin: 0.5rem 0;
+  border: 2px solid var(--white);
+  border-radius: var(--borderRadius);
+  background: var(--white);
+  width: 100%;
+  z-index: 6;
+}
+
+.searchIcon {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.searchIcon svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  border: none;
+  padding-left: var(--padding);
+  font-size: 1.1rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+}
+
+.result {
+  box-sizing: content-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  transition: var(--transition);
+  border-bottom: 1px solid var(--grey-300);
+}
+
+.result:last-child {
+  border: none;
+}
+
+.result:hover {
+  background: var(--grey-300);
+}
+
+.result img {
+  border-radius: 50px;
+}
+
+.resultData {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: var(--padding);
+  width: 100%;
+}
+
+.resultName {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.resultLocation {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--grey-800);
+}
+
+/* 768 and up */
+@media screen and (min-width: 768px) {
+  .overlay {
+    display: none;
+  }
+
+  .searchbar {
+    &::before {
+      display: none;
+    }
+  }
+
+  .headerSearch {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    border-radius: var(--borderRadius);
+  }
+
+  .searchResults {
+    overflow-y: hidden;
+  }
+
+  .searchIcon {
+    font-size: 1.7rem;
+  }
+
+  .searchInput {
+    font-size: 1.3rem;
+  }
+}

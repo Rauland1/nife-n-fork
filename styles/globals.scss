@@ -1,0 +1,251 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: #ec5c5c;
+  --primary-hvr: #e73131;
+
+  --grey-0: #fafbfc;
+  --grey-50: #f2f4f8;
+  --grey-100: #eaedf3;
+  --grey-200: #e2e7ef;
+  --grey-300: #dbe0ea;
+  --grey-400: #d3dae6;
+  --grey-500: #cbd3e1;
+  --grey-600: #adb3bf;
+  --grey-700: #8e949e;
+  --grey-800: #70747c;
+  --grey-900: #51545a;
+  --grey-1000: #333538;
+  --grey-1100: #141516;
+
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* box shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --defaultFontSize: 87.5%;
+  --textColor: var(--grey-1000);
+  --letterSpacing: 1px;
+
+  --backgroundColor: var(--grey-0);
+  --borderRadius: 0.25rem;
+  --transition: 0.35s ease-in-out all;
+  --max-width: 1200px;
+
+  --navbarHeight: 5rem;
+  --footerHeight: 5.5rem;
+
+  --padding: 0.6rem;
+
+  --minMapHeight: 200px;
+
+  --heightCalc: calc(100vh - (var(--navbarHeight) + var(--footerHeight)));
+}
+
+html {
+  font-size: var(--defaultFontSize);
+  font-family: "Nunito", sans-serif;
+  background: var(--backgroundColor);
+  scrollbar-width: thin;
+}
+
+@media only screen and (min-width: 576px) {
+  :root {
+    --defaultFontSize: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --defaultFontSize: 112.5%;
+    --navbarHeight: 4.7rem;
+    --footerHeight: 5.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container-padding {
+    padding: 0 !important;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.slick-slide {
+  margin-right: 0px;
+}
+
+.stars > span {
+  border: 1px solid var(--primary);
+  border-radius: var(--borderRadius);
+  background: var(--primary);
+  margin: 0 0.05rem;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: var(--heightCalc);
+  transition: var(--transition);
+  z-index: 1;
+  padding-top: var(--padding);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 1.45rem;
+}
+
+.container-padding {
+  padding: 0 1.45rem;
+}
+
+.leaflet-container {
+  width: 100%;
+  min-height: var(--minMapHeight);
+  max-height: var(--heightCalc);
+  z-index: 1;
+}
+
+.customMarker {
+  opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.blur {
+  user-select: none;
+  pointer-events: none;
+  filter: blur(3px);
+  transition: var(--transition);
+}
+
+.headerBorder {
+  box-shadow: var(--shadow-1);
+}
+
+.mobileSearchbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--navbarHeight);
+  padding: 0 1.45rem !important;
+  margin: 0 !important;
+  z-index: 100 !important;
+
+  input {
+    padding-right: var(--padding);
+    font-size: 1.4rem;
+  }
+
+  svg {
+    font-size: 2rem;
+  }
+}
+
+button,
+.btn {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  background: var(--primary);
+  border: none;
+  border-radius: var(--borderRadius);
+  padding: 0.375rem 0.75rem;
+  transition: var(--transition);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.image-gallery-left-nav:hover,
+.image-gallery-right-nav:hover {
+  color: white;
+  background: none;
+  box-shadow: none;
+}
+
+.image-gallery {
+  background: var(--grey-0);
+}
+
+.galleryImage {
+  height: 250px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  button:hover,
+  .btn:hover {
+    color: var(--white);
+    background: var(--primary-hvr);
+    box-shadow: var(--shadow-2);
+  }
+
+  .galleryImage {
+    height: 550px;
+  }
+
+  .slick-slide {
+    margin-right: 10px;
+  }
+}

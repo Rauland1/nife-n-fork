@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: var(--padding);
+    letter-spacing: var(--letterSpacing);
+    font-size: 0.9rem;
+  }
+}
+
+.dataSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  .favourites {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dataSection {
+    flex-direction: row;
+
+    .favourites {
+      width: 50%;
+    }
+  }
+}
