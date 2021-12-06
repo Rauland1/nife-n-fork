@@ -22,7 +22,7 @@ function Profile() {
           </Head>
           <div className="container container-padding">
             <div className={styles.header}>
-              <h3>{user?.nickname}'s Profile</h3>
+              <h3>{user?.nickname}&apos;s Profile</h3>
               <button>
                 <Link href="/api/auth/logout">
                   <a>Log out</a>

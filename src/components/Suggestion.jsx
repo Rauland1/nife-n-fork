@@ -61,7 +61,7 @@ const Suggestion = ({ header, subtitle, suggestions }) => {
           slidesToScroll: 2,
           arrows: false,
           dots: false,
-          infinite: true,
+          infinite: false,
           rows: 1,
         },
       },

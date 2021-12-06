@@ -44,8 +44,8 @@ const Reviews = ({ restaurant, user }) => {
         <>
           {restaurant && (
             <span>
-              There are no reviews for {restaurant.name}. Why don't you leave
-              one?
+              There are no reviews for {restaurant.name}. Why don&apos;t you
+              leave one?
             </span>
           )}
 

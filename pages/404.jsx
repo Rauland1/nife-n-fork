@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import styles from "../styles/NotFound.module.scss";
 
 const NotFound = () => {
@@ -16,7 +17,7 @@ const NotFound = () => {
       <div className={styles.notFound}>
         <h1 className={styles.notFoundHeader}>404</h1>
         <div className={styles.notFoundText}>
-          The page you're trying to access does not exist!
+          The page you&apos;re trying to access does not exist!
         </div>
         <Link href="/">
           <a className={styles.link}>&larr; Go Home</a>
