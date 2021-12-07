@@ -14,7 +14,7 @@ const RestaurantCard = ({ restaurant, onTooltip }) => {
           height={onTooltip ? 100 : 150}
           objectFit="cover"
           objectPosition="center"
-          alt="Hero Image"
+          alt="Restaurant Image"
           priority
         />
         <div className={styles.data}>

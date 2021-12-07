@@ -13,7 +13,7 @@
   gap: 20px;
   width: 100%;
   padding-top: var(--padding);
-  max-height: var(--heightCalc);
+  min-height: var(--heightCalc);
 }
 
 .cardWrapper {
@@ -26,11 +26,19 @@
   border-radius: var(--borderRadius);
   cursor: pointer;
   transition: var(--transition);
-  margin-right: 20px;
+
   background: var(--grey-0);
+
+  & > span {
+    min-width: 115px;
+    min-height: 115px;
+    max-width: 115px;
+    max-height: 115px;
+  }
 
   img {
     border-radius: var(--borderRadius);
+    width: 100%;
   }
 
   &:hover {
@@ -43,6 +51,9 @@
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 7px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   .title {
     font-size: 1.5rem;
@@ -120,9 +131,21 @@
     overflow: hidden;
   }
 
+  .cardWrapper {
+    margin-right: 20px;
+
+    & > span {
+      min-width: 100px;
+      min-height: 100px;
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+
   .list {
     overflow-x: hidden;
     overflow-y: scroll;
     scrollbar-width: thin;
+    max-height: var(--heightCalc);
   }
 }
