@@ -55,12 +55,15 @@ const ReviewForm = ({ onSubmit, review, success, error }) => {
     submit
       ? onSubmit(data)
       : setErr("Form could not be submitted! Try again later.");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const deleteReview = async (e) => {
     e.preventDefault();
     try {
       await axios.delete(`${server}/api/reviews/${review._id}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setSucc("Review deleted successfully! Redirecting...");
       setTimeout(() => router.back(), 1500);
     } catch (error) {
@@ -83,7 +86,7 @@ const ReviewForm = ({ onSubmit, review, success, error }) => {
         {(success || succ) && !err && (
           <>
             <h4>
-              <MdOutlineCheckCircle />
+              <MdOutlineCheckCircle style={{ color: "var(--green-dark)" }} />
               Success
             </h4>
             {success || succ}
@@ -92,7 +95,7 @@ const ReviewForm = ({ onSubmit, review, success, error }) => {
         {err && (
           <>
             <h4>
-              <MdErrorOutline />
+              <MdErrorOutline style={{ color: "var(--red-dark)" }} />
               Error
             </h4>
             {err}

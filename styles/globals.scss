@@ -10,6 +10,8 @@
   --primary: #ec5c5c;
   --primary-hvr: #e73131;
 
+  --secondary: #e8a25d;
+
   --grey-0: #fafbfc;
   --grey-50: #f2f4f8;
   --grey-100: #eaedf3;
@@ -64,6 +66,19 @@ html {
   font-family: "Nunito", sans-serif;
   background: var(--backgroundColor);
   scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--grey-500);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--grey-500);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--primary);
 }
 
 @media only screen and (min-width: 576px) {
@@ -121,6 +136,14 @@ a {
   background: var(--primary);
   margin: 0 0.05rem;
   display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

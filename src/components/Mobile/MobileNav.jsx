@@ -50,7 +50,7 @@ const MobileNav = ({ user }) => {
         }
       >
         <ul>
-          {linksToUse.length &&
+          {linksToUse.length > 0 &&
             linksToUse.map((link) => {
               if (!link.btn && link.onMobile) {
                 return (
@@ -68,14 +68,14 @@ const MobileNav = ({ user }) => {
               } else if (link.onMobile) {
                 return (
                   <li key={link.name}>
-                    <a href={link.path}>
+                    <Link href={link.path}>
                       <button
                         onClick={handleClick}
                         className={headerStyles.navLink}
                       >
                         {link.name}
                       </button>
-                    </a>
+                    </Link>
                   </li>
                 );
               }

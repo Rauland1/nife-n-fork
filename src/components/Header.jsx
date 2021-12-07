@@ -75,7 +75,7 @@ const Header = () => {
           <Searchbar />
         </div>
         <ul className={headerStyles.navList}>
-          {linksToUse.length &&
+          {linksToUse.length > 0 &&
             linksToUse.map((link) => {
               if (!link.btn && link.onDesktop) {
                 return (
@@ -90,11 +90,11 @@ const Header = () => {
               } else if (link.btn) {
                 return (
                   <li key={link.name}>
-                    <a href={link.path} as={link.path}>
+                    <Link href={link.path} as={link.path}>
                       <button className={headerStyles.signUpBtn}>
                         {link.name}
                       </button>
-                    </a>
+                    </Link>
                   </li>
                 );
               } else {

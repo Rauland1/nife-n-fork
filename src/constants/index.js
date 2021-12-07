@@ -22,7 +22,7 @@ export const USER_LINKS = [
     name: "Restaurants",
     path: "/restaurants",
     btn: false,
-    onMobile: false,
+    onMobile: true,
     onDesktop: true,
   },
   {
