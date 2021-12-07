@@ -8,19 +8,19 @@ function Profile() {
   const { user, isLoading } = useUser();
 
   return (
-    <>
-      {user && !isLoading && (
-        <div className="page">
-          <Head>
-            <title>Nife & Fork - Profile</title>
-            <meta
-              name="description"
-              content="Restaurant review application - Profile"
-            />
-            <meta property="og:title" content="Nife & Fork - Profile" />
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
-          <div className="container container-padding">
+    <div className="page">
+      <Head>
+        <title>Nife & Fork - Profile</title>
+        <meta
+          name="description"
+          content="Restaurant review application - Profile"
+        />
+        <meta property="og:title" content="Nife & Fork - Profile" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="container container-padding">
+        {user && !isLoading && (
+          <>
             <div className={styles.header}>
               <h3>{user?.nickname}&apos;s Profile</h3>
               <button>
@@ -35,10 +35,10 @@ function Profile() {
                 <h4>Favourite Restaurants</h4>
               </div>
             </section>
-          </div>
-        </div>
-      )}
-    </>
+          </>
+        )}
+      </div>
+    </div>
   );
 }
 
