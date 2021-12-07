@@ -1,9 +1,3 @@
-export const API_HEADERS = {
-  "x-api-key": process.env.NEXT_PUBLIC_X_API_KEY,
-  "x-rapidapi-host": process.env.NEXT_PUBLIC_X_RAPIDAPI_HOST,
-  "x-rapidapi-key": process.env.NEXT_PUBLIC_X_RAPIDAPI_KEY,
-};
-
 export const LINKS = [
   { name: "Home", path: "/", btn: false, onMobile: true, onDesktop: true },
   {
