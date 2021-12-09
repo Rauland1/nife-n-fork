@@ -6,19 +6,19 @@ import { useState, useEffect } from "react";
 
 import styles from "../../styles/Review.module.scss";
 
-const Reviews = ({ restaurant, user }) => {
+const Reviews = ({ restaurant, username }) => {
   const router = useRouter();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     async function fetchReviews() {
       const { data } = await axios.get(
-        user
-          ? `${server}/api/users/${user}`
+        username
+          ? `${server}/api/users/${username}`
           : `${server}/api/allreviews?id=${restaurant._id}`
       );
 
-      setReviews(data.message);
+      setReviews(data.reviews);
     }
 
     fetchReviews();
@@ -36,7 +36,7 @@ const Reviews = ({ restaurant, user }) => {
         {restaurant && <button onClick={handleClick}>Leave a review</button>}
       </div>
 
-      {reviews.length ? (
+      {reviews?.length ? (
         reviews.map((review) => {
           return <ReviewCard review={review} key={review._id} />;
         })
@@ -49,7 +49,7 @@ const Reviews = ({ restaurant, user }) => {
             </span>
           )}
 
-          {user && <span>{user} did not leave any reviews yet.</span>}
+          {username && <span>{username} did not leave any reviews yet.</span>}
         </>
       )}
     </section>

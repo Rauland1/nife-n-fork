@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       .find({ restaurant_id: new ObjectId(restaurant_id) })
       .toArray();
 
-    return res.status(200).json({ message: reviews, success: true });
+    return res.status(200).json({ reviews, success: true });
   } catch (error) {
     return res.json({
       message: new Error(error).message,

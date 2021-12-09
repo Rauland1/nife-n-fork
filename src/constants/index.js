@@ -27,7 +27,7 @@ export const USER_LINKS = [
   },
   {
     name: "Profile",
-    path: "/profile",
+    path: `/profile/`,
     btn: true,
     onMobile: true,
     onDesktop: true,

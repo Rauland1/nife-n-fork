@@ -4,9 +4,9 @@ import connectToDatabase from "../../../utils/mongodb";
 
 export default async function handler(req, res) {
   const id = req.query.id;
-  let { db } = await connectToDatabase();
 
   try {
+    let { db } = await connectToDatabase();
     const restaurant = await db
       .collection("restaurants")
       .find({ _id: ObjectId(id) })

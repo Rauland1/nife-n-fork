@@ -77,6 +77,8 @@ const Header = () => {
         <ul className={headerStyles.navList}>
           {linksToUse.length > 0 &&
             linksToUse.map((link) => {
+              if (link.name === "Profile")
+                link.path = `/profile/${user.nickname}`;
               if (!link.btn && link.onDesktop) {
                 return (
                   <li key={link.name}>
@@ -87,7 +89,7 @@ const Header = () => {
                     </Link>
                   </li>
                 );
-              } else if (link.btn) {
+              } else if (link.btn && link.onDesktop) {
                 return (
                   <li key={link.name}>
                     <Link href={link.path} as={link.path}>

@@ -3,6 +3,9 @@
   font-weight: 800;
   white-space: nowrap;
   letter-spacing: var(--letterSpacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .ratingData {
@@ -62,6 +65,10 @@
 @media screen and (min-width: 768px) {
   .title {
     font-size: 2.5rem;
+    button {
+      letter-spacing: var(--letterSpacing);
+      font-size: 1rem;
+    }
   }
 
   .divider {

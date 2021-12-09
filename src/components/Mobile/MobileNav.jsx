@@ -52,20 +52,9 @@ const MobileNav = ({ user }) => {
         <ul>
           {linksToUse.length > 0 &&
             linksToUse.map((link) => {
-              if (!link.btn && link.onMobile) {
-                return (
-                  <li key={link.name}>
-                    <Link href={link.path}>
-                      <button
-                        onClick={handleClick}
-                        className={headerStyles.navLink}
-                      >
-                        {link.name}
-                      </button>
-                    </Link>
-                  </li>
-                );
-              } else if (link.onMobile) {
+              if (link.name === "Profile")
+                link.path = `/profile/${user.nickname}`;
+              if (link.onMobile) {
                 return (
                   <li key={link.name}>
                     <Link href={link.path}>

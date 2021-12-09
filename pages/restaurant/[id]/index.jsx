@@ -17,6 +17,20 @@ const MapWithNoSSR = dynamic(
 );
 
 const Restaurant = ({ restaurant }) => {
+  const addFavourite = async () => {
+    const { data } = await axios.post(`${server}/api/restaurants/favourite`, {
+      restaurantId: restaurant._id,
+      restaurantName: restaurant.name,
+    });
+
+    if (data.success) {
+      // USE MESSAGE FOR MODAL
+      console.log(data.message);
+    } else {
+      console.error("Could not complete action.");
+    }
+  };
+
   return (
     <div className="page">
       <Head>
@@ -29,7 +43,10 @@ const Restaurant = ({ restaurant }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container container-padding">
-        <h1 className={styles.title}>{restaurant.name}</h1>
+        <h1 className={styles.title}>
+          {restaurant.name}{" "}
+          <button onClick={addFavourite}>Add to favourites</button>
+        </h1>
         <div className={styles.ratingData}>
           <StarRating size={30} edit={false} value={restaurant.rating} />{" "}
           <span>{restaurant?.count} reviews</span>

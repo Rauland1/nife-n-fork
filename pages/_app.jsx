@@ -21,15 +21,15 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <UserProvider>
+      <UserProvider>
+        {loading ? (
+          <Loader />
+        ) : (
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </UserProvider>
-      )}
+        )}
+      </UserProvider>
     </>
   );
 }

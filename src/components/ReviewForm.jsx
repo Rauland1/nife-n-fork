@@ -33,7 +33,7 @@ const ReviewForm = ({ onSubmit, review, success, error }) => {
     };
 
     let submit = false;
-
+    window.scrollTo({ top: 0, behavior: "smooth" });
     for (const val in data) {
       if (data[val] > 5 || data[val] < 0.5) {
         setErr("Values below 0.5 or over 5 are not allowed!");
@@ -55,8 +55,6 @@ const ReviewForm = ({ onSubmit, review, success, error }) => {
     submit
       ? onSubmit(data)
       : setErr("Form could not be submitted! Try again later.");
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const deleteReview = async (e) => {
