@@ -17,11 +17,14 @@ export default withApiAuthRequired(async function handler(req, res) {
       .find({ "user.username": username })
       .toArray();
 
-    if (foundUser.favourites) favourites = foundUser[0]?.favourites;
+    if (foundUser[0].favourites) favourites = foundUser[0].favourites;
 
-    if (favourites.some((e) => e.restaurant_id === restaurantId)) {
+    if (
+      favourites &&
+      favourites.some((e) => e.restaurant_id === restaurantId)
+    ) {
       return res.status(200).json({
-        message: "Restaurant is already a favourite. ",
+        message: "Restaurant is already a favourite.",
         success: true,
       });
     } else {
