@@ -1,6 +1,7 @@
 import axios from "axios";
 import Head from "next/head";
 import { server } from "../../../config";
+import { useUser } from "@auth0/nextjs-auth0";
 import { MdLocationPin } from "react-icons/md";
 import Reviews from "../../../src/components/Reviews";
 import Gallery from "../../../src/components/Gallery";
@@ -17,7 +18,10 @@ const MapWithNoSSR = dynamic(
 );
 
 const Restaurant = ({ restaurant }) => {
+  const { user } = useUser();
   const addFavourite = async () => {
+    if (!user) return console.log("Gotta log in first lmao xD");
+
     const { data } = await axios.post(`${server}/api/restaurants/favourite`, {
       restaurantId: restaurant._id,
       restaurantName: restaurant.name,
