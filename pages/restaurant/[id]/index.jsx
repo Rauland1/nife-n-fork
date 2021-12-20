@@ -20,7 +20,7 @@ const MapWithNoSSR = dynamic(
 const Restaurant = ({ restaurant }) => {
   const { user } = useUser();
   const addFavourite = async () => {
-    if (!user) return console.log("Gotta log in first lmao xD");
+    if (!user) return console.log("Gotta log in first");
 
     const { data } = await axios.post(`${server}/api/restaurants/favourite`, {
       restaurantId: restaurant._id,
